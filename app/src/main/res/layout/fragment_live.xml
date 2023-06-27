@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingVertical="30dp"
+    tools:context=".ui.HomeFragment">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvChannelId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#666666"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/buttonClose"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/buttonClose"
+        tools:text="1234" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivMusicPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:src="@android:drawable/ic_media_play"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvChannelId" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivMusicPause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/ic_media_pause"
+        app:layout_constraintBottom_toBottomOf="@id/ivMusicPlay"
+        app:layout_constraintStart_toEndOf="@id/ivMusicPlay"
+        app:layout_constraintTop_toTopOf="@id/ivMusicPlay" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvMusicName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintBottom_toBottomOf="@id/ivMusicPlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivMusicPause"
+        app:layout_constraintTop_toTopOf="@id/ivMusicPlay"
+        tools:text="不能说的秘密-周杰伦" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/buttonClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="8dp"
+        android:src="@android:drawable/ic_menu_close_clear_cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchMusic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
+        app:iconifiedByDefault="false"
+        app:layout_constraintTop_toBottomOf="@id/ivMusicPlay"
+        app:queryHint="Search" />
+
+    <ListView
+        android:id="@+id/musicList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchMusic"
+        tools:listitem="@android:layout/simple_list_item_1" />
+</androidx.constraintlayout.widget.ConstraintLayout>

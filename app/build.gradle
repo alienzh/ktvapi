@@ -94,7 +94,5 @@ dependencies {
     // 歌词组件
     implementation 'com.github.AgoraIO-Community:LyricsView:1.1.1-beta.8'
     // ktvapi
-//    api project(":lib_ktvapi")
-
-    api "com.github.AgoraIO-Community:KTVApi:1.0.0.1-android"
+    api project(":lib_ktvapi")
 }
